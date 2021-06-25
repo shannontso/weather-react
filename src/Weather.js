@@ -44,10 +44,10 @@ export default function Weather() {
         <h1 className="current-temperature">
           <span className="temperature">{weatherData.temperature}</span>
           <sup className="units">
-            <a href="#" className="celsius" rel="noreferrer">
+            <a href="#/" className="celsius" rel="noreferrer">
               °C{" "}
             </a>
-            <a href="#" className="celsius" rel="noreferrer">
+            <a href="#/" className="celsius" rel="noreferrer">
               {" "}
               | °F
             </a>
