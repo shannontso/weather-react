@@ -1,38 +1,128 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+* {
+  font-family: "Questrial", sans-serif;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  margin-top: 50px;
+  border: solid 1px black;
+  border-radius: 55px;
+  padding: 70px;
+  height: 862px;
+  width: 600px;
+  background: url("https://i.pinimg.com/originals/f6/0f/62/f60f6298dad2a3d09d721dc78049629e.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.city-time {
+  padding: 0;
+}
+.current-time {
+  font-size: 14px;
+}
+.city {
+  font-size: 25px;
+  font-weight: 400;
+  text-transform: capitalize;
+  padding-top: 8px;
+}
+.time {
+  font-size: 13px;
+}
+.search-form {
+  padding: 0;
+}
+.findCity {
+  color: black;
+  font-size: 14px;
+  border: 0.5px solid white;
+  border-radius: 15px;
+  padding: 6px 10px 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-button {
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 50%;
+  font-size: 16px;
+  padding: 3px 7px;
+}
+.search {
+  text-align: right;
+  padding-top: 10px;
+}
+.current-location {
+  font-size: 13px;
+  background: transparent;
+  border: none;
+  padding: 8px 6px 5px;
+  margin-left: 82px;
+}
+.current-location:hover {
+  text-decoration: underline;
+}
+.current-weather {
+  text-align: center;
+  margin: 110px 0 95px;
+}
+.current-time {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 10px 0;
+}
+#icon {
+  font-size: 800px;
+  width: 100px;
+}
+.current-temperature {
+  font-size: 55px;
+  font-weight: 400;
+  padding-left: 5px;
+  margin-bottom: 15px;
+}
+.units {
+  font-size: 17px;
+  top: -1.4em;
+}
+.units a {
+  color: white;
+  text-decoration: none;
+}
+.units a:hover {
+  text-decoration: underline;
+}
+.description {
+  font-size: 18px;
+  text-transform: capitalize;
+}
+.weather-description {
+  font-size: 16px;
+}
+.weather-forecast {
+  font-size: 18px;
+  padding: 30px 0;
+  text-align: center;
+  text-align: center;
+}
+
+.forecast-temperature {
+  font-size: 15px;
+}
+
+.forecast-temp-min {
+  opacity: 0.44;
+}
+
+.coder {
+  color: black;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 10px;
+}
+.coder a {
+  color: black;
+  transition: all 0.25 ease-in-out;
+}
+.coder a:hover {
+  opacity: 0.5;
 }
