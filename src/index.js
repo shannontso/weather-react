@@ -1,19 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
-import Weather from "./Weather";
 import "bootstrap/dist/css/bootstrap.css";
-import "./App.css";
+import App from "./App";
 
-function App() {
-  return (
-    <div className="App">
-      <div className="container">
-        <Weather />
-      </div>
-    </div>
-  );
-}
 ReactDOM.render(
   <React.StrictMode>
     <App />
