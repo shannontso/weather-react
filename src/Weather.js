@@ -1,23 +1,31 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-export default function Weather() {
-  const [ready, setReady] = useState(false);
-  const [temperature, setTemperature] = useState(null);
+export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponse(response) {
     console.log(response.data);
-    setTemperature(response.data.main.temp);
-    setReady(true);
+    setWeatherData({
+      ready: true,
+      city: response.data.name,
+      temperature: response.data.main.temp,
+      description: response.data.weather[0].description,
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed,
+      date: "Saturday, 15:44",
+      iconUrl:
+        "https://cdn.iconscout.com/icon/free/png-256/sun-bright-rays-sunny-weather-33960.png",
+    });
   }
 
-  if (ready) {
+  if (weatherData.ready) {
     return (
       <div className="weather">
         <div className="row">
           <div className="col city-time">
-            <h2 className="city">Tokyo</h2>
+            <h2 className="city">{weatherData.city}</h2>
             <h4 className="time">
-              Last updated: <span className="date">Saturday, 15:44</span> CET
+              Last updated: <span className="date">{weatherData.date}</span> CET
             </h4>
           </div>
           <div className="col search-form">
@@ -38,12 +46,14 @@ export default function Weather() {
         </div>
         <div className="current-weather">
           <img
-            src="https://cdn.iconscout.com/icon/free/png-256/sun-bright-rays-sunny-weather-33960.png"
-            alt="icon"
+            src={weatherData.iconUrl}
+            alt={weatherData.description}
             id="icon"
           />
           <h1 className="current-temperature">
-            <span className="temperature">18</span>
+            <span className="temperature">
+              {Math.round(weatherData.temperature)}
+            </span>
             <sup className="units">
               <a href="#/" className="celsius" rel="noreferrer">
                 °C{" "}
@@ -53,12 +63,16 @@ export default function Weather() {
                 | °F
               </a>
             </sup>
-            <h4 className="weather-description description">Sunny</h4>
-            <h4 className="weather-description">
-              Humidity: <span className="humidity">44</span>%
+            <h4 className="weather-description description text-capitalize">
+              {weatherData.description}
             </h4>
             <h4 className="weather-description">
-              Wind speed: <span className="wind">2</span>km/h
+              Humidity: <span className="humidity">{weatherData.humidity}</span>
+              %
+            </h4>
+            <h4 className="weather-description">
+              Wind speed:{" "}
+              <span className="wind">{Math.round(weatherData.wind)}</span>km/h
             </h4>
           </h1>
         </div>
@@ -66,8 +80,7 @@ export default function Weather() {
     );
   } else {
     const apiKey = "159a9f8ff294f264def02ae4cac4278a";
-    let city = "Tokyo";
-    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 
     return "Loading...";
