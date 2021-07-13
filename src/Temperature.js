@@ -1,4 +1,3 @@
-import { directive } from "@babel/types";
 import React, { useState } from "react";
 
 export default function Temperature(props) {
