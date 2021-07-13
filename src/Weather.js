@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
 import axios from "axios";
 
 export default function Weather(props) {
@@ -15,8 +16,7 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       date: new Date(response.data.dt * 1000),
-      iconUrl:
-        "https://cdn.iconscout.com/icon/free/png-256/sun-bright-rays-sunny-weather-33960.png",
+      icon: response.data.weather[0].icon,
     });
   }
 
@@ -67,11 +67,8 @@ export default function Weather(props) {
           </div>
         </div>
         <div className="current-weather">
-          <img
-            src={weatherData.iconUrl}
-            alt={weatherData.description}
-            id="icon"
-          />
+          <WeatherIcon code={weatherData.icon} />
+
           <h1 className="current-temperature">
             <span className="temperature">
               {Math.round(weatherData.temperature)}

@@ -70,9 +70,8 @@
   font-weight: 400;
   margin: 10px 0;
 }
-#icon {
-  font-size: 800px;
-  width: 100px;
+canvas {
+  margin-bottom: 40px;
 }
 .current-temperature {
   font-size: 55px;
