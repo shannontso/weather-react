@@ -3,6 +3,7 @@ import FormattedDate from "./FormattedDate";
 import axios from "axios";
 
 export default function Weather(props) {
+  const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponse(response) {
     console.log(response.data);
@@ -17,6 +18,21 @@ export default function Weather(props) {
       iconUrl:
         "https://cdn.iconscout.com/icon/free/png-256/sun-bright-rays-sunny-weather-33960.png",
     });
+  }
+
+  function search() {
+    const apiKey = "159a9f8ff294f264def02ae4cac4278a";
+    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
   }
 
   if (weatherData.ready) {
@@ -34,11 +50,12 @@ export default function Weather(props) {
             </h4>
           </div>
           <div className="col search-form">
-            <form className="search">
+            <form className="search" onSubmit={handleSubmit}>
               <input
                 type="text"
                 placeholder="Search city"
                 className="findCity"
+                onChange={handleCityChange}
               />
               <button type="submit" className="search-button">
                 <i className="bx bx-search"></i>
@@ -84,10 +101,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    const apiKey = "159a9f8ff294f264def02ae4cac4278a";
-    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
-
+    search();
     return "Loading...";
   }
 }
