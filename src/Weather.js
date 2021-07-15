@@ -19,6 +19,7 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
       date: new Date(response.data.dt * 1000),
       icon: response.data.weather[0].icon,
+      coord: response.data.coord,
     });
   }
 
@@ -85,7 +86,7 @@ export default function Weather(props) {
             </h4>
           </h1>
         </div>
-        <WeatherForecast />
+        <WeatherForecast coord={weatherData.coord} />
       </div>
     );
   } else {
