@@ -1,58 +1,77 @@
 import React from "react";
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherForecast() {
   return (
-    <div class="week-weather">
-      <div class="row days">
-        <div class="col predicted-weather">Thu</div>
+    <div className="week-weather">
+      <div className="row days">
+        <div className="col predicted-weather">Thu</div>
 
-        <div class="col predicted-weather">Fri</div>
+        <div className="col predicted-weather">Fri</div>
 
-        <div class="col predicted-weather">Sat</div>
+        <div className="col predicted-weather">Sat</div>
 
-        <div class="col predicted-weather">Sun</div>
+        <div className="col predicted-weather">Sun</div>
 
-        <div class="col predicted-weather">Mon</div>
+        <div className="col predicted-weather">Mon</div>
 
-        <div class="col predicted-weather">Tue</div>
+        <div className="col predicted-weather">Tue</div>
       </div>
-      <div class="row week-icons">
-        <div class="col predicted-weather">
-          <i class="bx bx-cloud"></i>
+      <div className="row week-icons">
+        <div className="col predicted-weather">
+          <WeatherIcon code="02d" size={35} />
         </div>
 
-        <div class="col predicted-weather">
-          <i class="bx bx-cloud"></i>
+        <div className="col predicted-weather">
+          <WeatherIcon code="02d" size={35} />
         </div>
 
-        <div class="col predicted-weather">
-          <i class="bx bx-cloud"></i>
+        <div className="col predicted-weather">
+          <WeatherIcon code="02d" size={35} />
         </div>
 
-        <div class="col predicted-weather">
-          <i class="bx bx-cloud"></i>
+        <div className="col predicted-weather">
+          <WeatherIcon code="02d" size={35} />
         </div>
 
-        <div class="col predicted-weather">
-          <i class="bx bx-cloud"></i>
+        <div className="col predicted-weather">
+          <WeatherIcon code="02d" size={35} />
         </div>
 
-        <div class="col predicted-weather">
-          <i class="bx bx-cloud"></i>
+        <div className="col predicted-weather">
+          <WeatherIcon code="02d" size={35} />
         </div>
       </div>
-      <div class="row week-temp">
-        <div class="col predicted-weather">12°</div>
+      <div className="row week-temp">
+        <div className="col predicted-weather forecast-temp">
+          <span className="forecast-temp-max">12° </span>
+          <span className="forecast-temp-min">10°</span>
+        </div>
 
-        <div class="col predicted-weather">15°</div>
+        <div className="col predicted-weather forecast-temp">
+          <span className="forecast-temp-max">12° </span>
+          <span className="forecast-temp-min">10°</span>
+        </div>
 
-        <div class="col predicted-weather">14°</div>
+        <div className="col predicted-weather forecast-temp">
+          <span className="forecast-temp-max">12° </span>
+          <span className="forecast-temp-min">10°</span>
+        </div>
 
-        <div class="col predicted-weather">15°</div>
+        <div className="col predicted-weather forecast-temp">
+          <span className="forecast-temp-max">12° </span>
+          <span className="forecast-temp-min">10°</span>
+        </div>
 
-        <div class="col predicted-weather">13°</div>
+        <div className="col predicted-weather forecast-temp">
+          <span className="forecast-temp-max">12° </span>
+          <span className="forecast-temp-min">10°</span>
+        </div>
 
-        <div class="col predicted-weather">14°</div>
+        <div className="col predicted-weather forecast-temp">
+          <span className="forecast-temp-max">12° </span>
+          <span className="forecast-temp-min">10°</span>
+        </div>
       </div>
     </div>
   );

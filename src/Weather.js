@@ -69,7 +69,7 @@ export default function Weather(props) {
           </div>
         </div>
         <div className="current-weather">
-          <WeatherIcon code={weatherData.icon} />
+          <WeatherIcon code={weatherData.icon} size={110} />
           <h1 className="current-temperature">
             <Temperature celsius={weatherData.temperature} />
             <h4 className="weather-description description text-capitalize">
