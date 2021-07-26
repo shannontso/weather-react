@@ -63,9 +63,6 @@ export default function Weather(props) {
                 <i className="bx bx-search"></i>
               </button>
             </form>
-            <button className="current-location">
-              <i className="bx bxs-map"></i> Current location
-            </button>
           </div>
         </div>
         <div className="current-weather">
