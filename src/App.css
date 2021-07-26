@@ -51,16 +51,7 @@
   text-align: right;
   padding-top: 10px;
 }
-.current-location {
-  font-size: 13px;
-  background: transparent;
-  border: none;
-  padding: 8px 6px 5px;
-  margin-left: 82px;
-}
-.current-location:hover {
-  text-decoration: underline;
-}
+
 .current-weather {
   text-align: center;
   margin: 100px 0 95px;
